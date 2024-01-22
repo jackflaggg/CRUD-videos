@@ -175,7 +175,7 @@ videosRouter.put('/:id', (req: Request, res: Response) => {
         video.availableResolutions = availableResolutions;
 
         res
-            .status(HTTP_STATUSES.NO_CONTENT_204)
+            .status(HTTP_STATUSES.OK_200)
             .send(video)
     } else {
         res
