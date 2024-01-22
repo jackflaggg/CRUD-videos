@@ -186,13 +186,13 @@ videosRouter.put('/:id', (req: Request, res: Response) => {
 });
 
 videosRouter.delete('/testing/all-data', (req : Request, res : Response) => {
-    try {
+    //try {
         videos.length = 0;
         res.sendStatus(HTTP_STATUSES.NO_CONTENT_204);
-    } catch (error) {
-        console.error('Error video', error);
-        res.sendStatus(HTTP_STATUSES.INTERNAL_SERVER_ERROR_500)
-    }
+    //} catch (error) {
+   //     console.error('Error video', error);
+      //  res.sendStatus(HTTP_STATUSES.INTERNAL_SERVER_ERROR_500)
+   // }
 });
 
 videosRouter.delete('/:id', (req : Request, res : Response) => {
