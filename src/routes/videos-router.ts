@@ -65,7 +65,7 @@ videosRouter.post('/', (req : RequestWithBody<CreateVideosType>, res : Response)
         errors.errorsMessages.push({message: 'Incorrect author', field: 'author'})
     }
 
-    if (Array.isArray(availableResolutions)) {
+    if (availableResolutions && Array.isArray(availableResolutions)) {
         for (const r of availableResolutions) {
             if (!availableResolutions.includes(r)) {
                 errors.errorsMessages.push({ message: 'Incorrect availableResolutions!', field: 'availableResolutions' });
