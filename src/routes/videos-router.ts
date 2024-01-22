@@ -66,12 +66,14 @@ videosRouter.post('/', (req : RequestWithBody<CreateVideosType>, res : Response)
     }
 
     if (availableResolutions && Array.isArray(availableResolutions)) {
-        for (const r of availableResolutions) {
-            if (!availableResolutions.includes(r)) {
-                errors.errorsMessages.push({ message: 'Incorrect availableResolutions!', field: 'availableResolutions' });
-                break; // Прерывает выполнение цикла
-            }
-        }
+        availableResolutions.forEach((r) => {
+            !AvailableResolutions.includes(r) &&
+            errors.errorsMessages.push(
+                {
+                    message: 'Incorrect availableResolutions!',
+                    field: 'availableResolutions'
+                })
+        })
     } else {
         availableResolutions = [];
     }
