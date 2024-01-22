@@ -12,7 +12,7 @@ import {
 
 export const videosRouter = Router({});
 
-export const videos: VideoType[] = [
+export let videos: VideoType[] = [
     {
         "id": 0,
         "title": "string",
@@ -187,7 +187,7 @@ videosRouter.put('/:id', (req: Request, res: Response) => {
 
 videosRouter.delete('/testing/all-data', (req : Request, res : Response) => {
     //try {
-        videos.length = 0;
+        videos = [];
         res.sendStatus(HTTP_STATUSES.NO_CONTENT_204);
     //} catch (error) {
    //     console.error('Error video', error);
