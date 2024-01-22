@@ -177,7 +177,7 @@ videosRouter.put('/:id', (req: Request, res: Response) => {
         video.availableResolutions = availableResolutions;
 
         res
-            .status(HTTP_STATUSES.OK_200)
+            .status(HTTP_STATUSES.NO_CONTENT_204)
             .send(video)
     } else {
         res
@@ -186,16 +186,6 @@ videosRouter.put('/:id', (req: Request, res: Response) => {
 
 
 });
-
-/*videosRouter.delete('/testing/all-data', (req : Request, res : Response) => {
-    //try {
-        videos = [];
-        res.sendStatus(HTTP_STATUSES.NO_CONTENT_204);
-    //} catch (error) {
-   //     console.error('Error video', error);
-      //  res.sendStatus(HTTP_STATUSES.INTERNAL_SERVER_ERROR_500)
-   // }
-});*/
 
 videosRouter.delete('/:id', (req : Request, res : Response) => {
     for (let i = 0; i < videos.length; i++) {
